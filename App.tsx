@@ -1,12 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { GuestWelcomeScreen } from "./screens/GuestWelcomeScreen";
 
 export default function App() {
+  const Stack = createStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen
+        name="GuestWelcome"
+        component={GuestWelcomeScreen}
+        options={{ title: "Welcome" }}
+      />
+    </Stack.Navigator>
   );
 }
 
